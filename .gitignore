@@ -1,0 +1,19 @@
+# Python virtualenvs
+env/
+venv/
+.eggs/
+*.egg-info/
+
+# Cache files
+*.pyc
+*__pycache__*
+
+# IDEs
+.idea/
+.vscode/
+
+# Twisted trial
+_trial_temp
+
+# Tox
+.tox/
