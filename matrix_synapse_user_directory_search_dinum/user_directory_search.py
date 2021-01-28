@@ -91,13 +91,13 @@ class UserDirectorySearchModule:
                     3 * ts_rank_cd(
                         '{0.1, 0.1, 0.9, 1.0}',
                         vector,
-                        to_tsquery('english', ?),
+                        to_tsquery('simple', ?),
                         8
                     )
                     + ts_rank_cd(
                         '{0.1, 0.1, 0.9, 1.0}',
                         vector,
-                        to_tsquery('english', ?),
+                        to_tsquery('simple', ?),
                         8
                     )
                 )
