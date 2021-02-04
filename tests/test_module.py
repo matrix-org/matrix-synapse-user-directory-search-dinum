@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2020 The Matrix.org Foundation C.I.C.
+# Copyright 2021 The Matrix.org Foundation C.I.C.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ class UserDirectorySearchModuleTestCase(unittest.TestCase):
     def test_get_search_query_ordering(self):
         """Tests UserDirectorySearchModule.get_search_query_ordering return values"""
         user_config = {"weighted_display_name_like": "[Modernisation]"}
+
         module, _, _ = create_user_directory_search_module_with_config(user_config)
 
         # Check postgres

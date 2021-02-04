@@ -33,9 +33,14 @@ class ModuleConfig(object):
 class UserDirectorySearchModule:
     """Allows server admins to provide a Python module that augments the results of a
     user directory search.
+
+    Args:
+        module_api: An instance of Synapse's ModuleApi class.
     """
 
-    def __init__(self, config: ModuleConfig, module_api: ModuleApi):
+    def __init__(
+        self, config: ModuleConfig, module_api: ModuleApi,
+    ):
         self.weighted_display_name_like = config.weighted_display_name_like
 
     @staticmethod
@@ -51,7 +56,7 @@ class UserDirectorySearchModule:
         )
 
     def get_search_query_ordering(
-        self, database_engine_type: BaseDatabaseEngine
+        self, database_engine_type: BaseDatabaseEngine,
     ) -> Tuple[str, Tuple]:
         """Returns the contents of the ORDER BY section of the user directory search
         query. The full query can be found in UserDirectoryStore.
@@ -63,10 +68,9 @@ class UserDirectorySearchModule:
 
         Returns:
             A tuple containing:
-
-            * A string that can be placed after ORDER BY in order to influence the
-              ordering of results from a user directory search.
-            * A tuple containing any extra arguments to provide to the query.
+                * A string that can be placed after ORDER BY in order to influence the
+                  ordering of results from a user directory search.
+                * A tuple containing any extra arguments to provide to the query.
         """
         if database_engine_type == PostgresEngine:
             # We order by rank and then if a user has profile info.
