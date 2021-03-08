@@ -1,5 +1,9 @@
 # Synapse User Directory Search Module for DINUM
 
+**NOTE: The implementation for this feature ended up going in a different
+direction, and thus this repository is no longer maintained. The code
+has been archived for posterity.**
+
 A Synapse module which augments user directory search results
 as specified by the French Government deployment. For example,
 with this module installed, users from the same ministry are
